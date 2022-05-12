@@ -7,15 +7,19 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private ListView listViewItem;
-    private Toolbar toolbarMain;
+    private ArrayList<String> listMenu ;
     private NavigationView navigationViewMain;
     private DrawerLayout drawerLayoutMain;
     private Account account;
@@ -29,7 +33,19 @@ public class MainActivity extends AppCompatActivity {
         navInformationAction();
         navMenuAction();
         menuAction();
+        menuLeftAction();
     }
+
+    private void menuLeftAction() {
+        listMenu = new ArrayList<String>();
+        listMenu.add("Đặt nhanh");
+        listMenu.add("Đăng xuất");
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,listMenu);
+        listViewItem.setAdapter(adapter);
+    }
+
+
+    // right Menu
     private void navInformationAction() {
         btnInf.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,11 +54,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    // left Menu
     private void navMenuAction() {
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayoutMain.openDrawer(GravityCompat.START);
+
             }
         });
     }
@@ -65,5 +85,6 @@ public class MainActivity extends AppCompatActivity {
         avatar = findViewById(R.id.inf_avatar);
         btnInf = findViewById(R.id.nav_information);
         btnMenu = findViewById(R.id.nav_menu);
+        listViewItem = findViewById(R.id.list_menu);
     }
 }
