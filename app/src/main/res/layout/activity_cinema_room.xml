@@ -3,21 +3,144 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/display"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/retangle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </ImageView>
-    <GridView
-        android:numColumns="6"
-        android:id="@+id/list_seats"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/display"
+    <RelativeLayout
+        android:id="@+id/set1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="150dp">
+        <ImageView
+            android:id="@+id/display"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/retangle_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </ImageView>
+        <TextView
+            android:textSize="30dp"
+            android:text="MÀN HÌNH"
+            android:id="@+id/txt_display"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/list_seats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/set1"
+        android:layout_marginTop="10dp"
+        android:numColumns="8">
 
     </GridView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list_seats"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/seat_retangle"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ghế trống"
+                android:textSize="18dp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/seat_retangle_you_selected"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đang chọn"
+                android:textSize="18dp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/seat_retangle_another_selected"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ghế đã chọn"
+                android:textSize="18dp">
+
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="20dp"
+                android:text="Ghế bạn chọn:    "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView
+                android:textSize="20dp"
+                android:id="@+id/txt_choosen_seat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A1"
+                android:textStyle="bold">
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="20dp"
+                android:text="Giá:    "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView
+                android:textSize="20dp"
+                android:id="@+id/txt_tmp_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 tỷ"
+                android:textStyle="bold">
+            </TextView>
+        </LinearLayout>
+        <Button
+            android:backgroundTint="@color/main"
+            android:id="@+id/btn_book_the_tiket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="Đặt vé">
+
+        </Button>
+
+
+    </LinearLayout>
 </RelativeLayout>

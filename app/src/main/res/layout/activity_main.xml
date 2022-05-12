@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-
 
     <!--DRAWER LAYOUT -->
     <androidx.drawerlayout.widget.DrawerLayout
@@ -25,38 +25,121 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/shape_retangle"></ImageView>
+                    android:background="@drawable/shape_retangle"/>
 
                 <ImageView
                     android:id="@+id/nav_menu"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_menu"></ImageView>
+                    android:src="@drawable/ic_menu"/>
 
                 <ImageView
                     android:id="@+id/nav_information"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/ic_information_people"></ImageView>
+                    android:src="@drawable/ic_information_people" />
 
             </RelativeLayout>
-            <!--MAIN-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
+
+            <!--MAIN-->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+<!--                Banner -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_weight="10"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/view_pager_2_banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"/>
+                        <me.relex.circleindicator.CircleIndicator3
+                            android:id="@+id/circle_indicator3_banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_alignParentBottom="true" />
+<!--                            app:ci_drawable="@drawable/bg_indicator_banner"-->
+
+                    </RelativeLayout>
+                    <!--Danh sach phim_SlideShow-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:background="@drawable/logo">
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/view_pager_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="400dp"
+                            android:paddingStart="80dp"
+                            android:paddingEnd="80dp" />
+                        <me.relex.circleindicator.CircleIndicator3
+                            android:id="@+id/circle_indicator3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            app:ci_drawable="@drawable/bg_indicator"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@color/gray">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="PHIM ĐƯỢC YÊU THÍCH NHẤT"
+                            android:textSize="20dp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:background="@color/main"/>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/img_1" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="Người nhện không còn nhà"
+                                android:textSize="20dp"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Khởi chiếu ngày 17.4.2022"/>
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btDatve"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:background="@drawable/botron_bt_login"
+                            android:text="Đặt vé"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                    </LinearLayout>
 
                 </LinearLayout>
+            </ScrollView>
 
-            </LinearLayout>
         </LinearLayout>
 
         <!--NAVIGATION RIGHT-->
@@ -82,21 +165,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/shape_circle"></ImageView>
+                        android:src="@drawable/shape_circle"/>
 
                     <ImageView
                         android:id="@+id/inf_avatar"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/ic_information_people"></ImageView>
+                        android:src="@drawable/ic_information_people"/>
                 </RelativeLayout>
                 <ImageView
                     android:id="@+id/inf_barcode"
                     android:layout_width="250dp"
                     android:layout_height="60dp"
                     android:backgroundTint="@color/main"
-                    android:src="@drawable/barcode"></ImageView>
+                    android:src="@drawable/barcode"/>
                 <TextView
                     android:id="@+id/inf_code"
                     android:layout_width="wrap_content"
@@ -104,7 +187,7 @@
                     android:fontFamily="monospace"
                     android:text="464645456464654987"
                     android:textColor="#000"
-                    android:textSize="15dp"></TextView>
+                    android:textSize="15dp"/>
                 <TextView
                     android:id="@+id/inf_name"
                     android:layout_width="wrap_content"
@@ -113,13 +196,13 @@
                     android:text="Nguyễn Thành Long"
                     android:textColor="@color/main"
                     android:textSize="20dp"
-                    android:textStyle="bold"></TextView>
+                    android:textStyle="bold"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:orientation="horizontal"></LinearLayout>
+                    android:orientation="horizontal"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -130,28 +213,28 @@
                         android:id="@+id/txt_chi_tieu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Chi tiêu năm qua:"></TextView>
+                        android:text="Chi tiêu năm qua:"/>
 
                     <TextView
                         android:id="@+id/txt_diem_thuong"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:text="Điểm thưởng:"></TextView>
+                        android:text="Điểm thưởng:"/>
                     <TextView
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txt_chi_tieu"
                         android:text="30"
-                        android:textSize="30dp"></TextView>
+                        android:textSize="30dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txt_diem_thuong"
                         android:layout_alignParentRight="true"
                         android:text="0"
-                        android:textSize="30dp"></TextView>
+                        android:textSize="30dp"/>
                 </RelativeLayout>
                 <TextView
                     android:layout_width="match_parent"
@@ -160,7 +243,7 @@
                     android:layout_marginTop="10dp"
                     android:text="Voucher của bạn:"
                     android:textSize="15dp"
-                    android:textStyle="italic"></TextView>
+                    android:textStyle="italic"/>
 
                 <TextView
 
@@ -170,21 +253,26 @@
                     android:layout_marginTop="10dp"
                     android:text="Bạn không có Voucher nào!"
                     android:textSize="20dp"
-                    android:textStyle="bold"></TextView>
+                    android:textStyle="bold"/>
+
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <Button
+                        android:id="@+id/logout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_centerInParent="true"
                         android:backgroundTint="@color/main"
-                        android:text="Đăng xuất">
+                        android:text="Đăng xuất"
+                        android:onClick="logout">
 
                     </Button>
+
+
                 </RelativeLayout>
             </LinearLayout>
         </com.google.android.material.navigation.NavigationView>
@@ -197,17 +285,18 @@
             android:fitsSystemWindows="true">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
-                <ListView
-                    android:layout_marginTop="100dp"
-                    android:id="@+id/list_menu"
+
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                </ListView>
+                    android:layout_height="match_parent"
+                    android:src="@drawable/barcode">
+
+                </ImageView>
             </LinearLayout>
         </com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>
 
-</LinearLayout>
+
+</RelativeLayout>
